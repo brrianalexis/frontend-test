@@ -6,7 +6,7 @@ import { FixedButton } from '../components/FixedBRButton';
 export const EventDetail = () => {
   return (
     <>
-      <Grid templateColumns='70% 30%' minH='90vh' mx={4}>
+      <Grid templateColumns='70% 30%' minH='80vh' mx={4}>
         <LeftColumn />
         <RightColumn />
       </Grid>
