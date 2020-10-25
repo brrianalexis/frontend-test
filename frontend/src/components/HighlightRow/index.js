@@ -1,21 +1,34 @@
 import { Flex, Grid, Image, Text } from '@chakra-ui/core';
+import { dateMatch } from '../../utils/dates';
 
-export const HighlightRow = () => {
-  return (
-    <Grid templateColumns='25% 50% 25%' my={2}>
-      <Image fallbackSrc='https://via.placeholder.com/100' />
-      <Flex direction='column' ml={2}>
-        <Flex align='flex-start'>
-          <Text mr={2}>Event Name</Text>
-          <Text>Jul 20 @ 1930</Text>
+export const HighlightRow = ({
+  title,
+  dates,
+  location,
+  description,
+  eventImage,
+}) => {
+  const showTimes = dates.filter(date => dateMatch('07/28/2015', date));
+
+  return showTimes.map(time => (
+    <Grid templateRows='50% 50%' my={2} key={time}>
+      <Flex justify='space-evenly'>
+        <Image
+          h='100px'
+          src={eventImage}
+          fallbackSrc='https://via.placeholder.com/100'
+        />
+        <Flex direction='column'>
+          <Text ml={2}>{title}</Text>
+          <Text ml={2}>{location}</Text>
         </Flex>
-        <Flex align='flex-end' mt={4}>
-          <Text>This is the event description</Text>
-        </Flex>
+        <Text>{time.split(' ')[1]}</Text>
       </Flex>
-      <Flex align='flex-end'>
-        <Text>Theatre X</Text>
+      <Flex direction='column' align='flex-end'>
+        <Flex align='flex-end' mt={4}>
+          <Text>{description}</Text>
+        </Flex>
       </Flex>
     </Grid>
-  );
+  ));
 };
