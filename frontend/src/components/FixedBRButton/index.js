@@ -1,7 +1,19 @@
+import { Flex, IconButton, Link } from '@chakra-ui/core';
+import { Link as RRDLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Flex, IconButton, Tooltip } from '@chakra-ui/core';
 
-export const FixedButton = ({ icon, label }) => {
+export const FixedButton = ({ icon, isLink, label }) => {
+  const Button = () => (
+    <IconButton
+      mb={2}
+      bg='transparent'
+      size='lg'
+      aria-label={label}
+      as={icon}
+      isRound
+    />
+  );
+
   return (
     <Flex
       position='fixed'
@@ -10,29 +22,19 @@ export const FixedButton = ({ icon, label }) => {
       bottom={10}
       right={10}
     >
-      <Tooltip
-        position='fixed'
-        bottom={5}
-        right={5}
-        mt={8}
-        size='lg'
-        label={label}
-        placement='left'
-      >
-        <IconButton
-          mb={2}
-          bg='transparent'
-          size='lg'
-          aria-label={label}
-          as={icon}
-          isRound
-        />
-      </Tooltip>
+      {isLink ? (
+        <Link as={RRDLink} to='/add'>
+          <Button />
+        </Link>
+      ) : (
+        <Button />
+      )}
     </Flex>
   );
 };
 
 FixedButton.propTypes = {
   icon: PropTypes.func.isRequired,
+  isLink: PropTypes.bool,
   label: PropTypes.string.isRequired,
 };
