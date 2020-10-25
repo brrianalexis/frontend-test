@@ -33,6 +33,6 @@ export const FixedButton = ({ icon, label }) => {
 };
 
 FixedButton.propTypes = {
-  icon: PropTypes.element.isRequired,
+  icon: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
 };
