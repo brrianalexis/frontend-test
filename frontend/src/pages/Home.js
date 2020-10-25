@@ -11,7 +11,7 @@ export const Home = () => {
         <EventsContainer />
         <Highlights />
       </Grid>
-      <FixedButton icon={RiAddCircleFill} label='Add event' />
+      <FixedButton icon={RiAddCircleFill} isLink label='Add event' />
     </>
   );
 };
