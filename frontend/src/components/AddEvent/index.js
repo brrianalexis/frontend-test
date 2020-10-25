@@ -74,7 +74,7 @@ export const RightColumn = () => {
           hasRightIcon
         />
       </FormControl>
-      <Flex justify='space-around' mt={4} w='90%'>
+      <Flex justify='space-around' mt={4} w='93%'>
         <FormControl isRequired w='30%'>
           <FormLabel htmlFor='date'>Date</FormLabel>
           <Input
