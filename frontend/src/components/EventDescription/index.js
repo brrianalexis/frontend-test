@@ -68,9 +68,7 @@ export const LeftColumn = () => {
 export const RightColumn = () => {
   return (
     <Flex direction='column' align='center' justify='space-around' h='100%'>
-      <Box>
-        <Image fallbackSrc='https://via.placeholder.com/250' />
-      </Box>
+      <Image fallbackSrc='https://via.placeholder.com/250' />
       <Table border='1px'>
         <TableHead>
           <TableRow>
@@ -97,9 +95,6 @@ export const RightColumn = () => {
           </TableRow>
         </TableBody>
       </Table>
-      {/*
-        //TODO  table w/ date, time and price
-       */}
     </Flex>
   );
 };
