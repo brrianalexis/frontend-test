@@ -27,7 +27,6 @@ export const NewEvent = () => {
   const handleSubmit = async () => {
     const eventCopy = newEvent;
     eventCopy.dates = [[eventCopy.date, eventCopy.time].join(' ')];
-    console.log('handleSubmit -> eventCopy', eventCopy);
     try {
       await Axios.post('http://localhost:8000/events', eventCopy);
     } catch (err) {
