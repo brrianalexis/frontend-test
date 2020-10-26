@@ -20,7 +20,9 @@ export const LeftColumn = ({ title, description, location }) => {
         </Heading>
       </Flex>
       <Box>
-        <Text mt={2}>{description}</Text>
+        <Text fontSize='xl' lineHeight='2rem' mt={2}>
+          {description}
+        </Text>
       </Box>
     </Flex>
   );
