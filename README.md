@@ -1,14 +1,18 @@
-# Ingenious test for candidates
+# My docs
+
+You can find my docs for the front-end challenge [here](./frontend/README.md)
+
+## Ingenious test for candidates
 
 Welcome **candidate**, this is the repository with all the needed material to complete your test.
 
 Please read this page carefully before jumping to the actual test, a lot of doubts you may have are probably answered here.
 
-## About the test
+### About the test
 
 For this test what we need you to do is a **Single Page Application** that consumes a sample backend you can find on this repo under the `backend` folder.
 
-## About the repo
+### About the repo
 
 The repo has the following folder structure:
 
@@ -24,7 +28,7 @@ The [backend](backend) folder has a RESTful API developed in node that should be
 
 The [instructions](instructions) folder has the user stories you need to implement along with some FAQ that may help you.
 
-## How should I deliver the test
+### How should I deliver the test
 
 You need to deliver this same repo but with your application developed into the [frontend](frontend) folder as well as installation instructions.
 
@@ -34,7 +38,7 @@ In any case, you should not check in or provide the `node_modules` folder or any
 
 We recommend having a README file on the `frontend` folder; this way reviewers have an easier job installing and running the application.
 
-## Next steps
+### Next steps
 
 The next thing you should do is test the [backend app](backend), after this you can [read the user stories](instructions) and start developing the [test](frontend).
 
