@@ -1,5 +1,4 @@
 import { Flex, Grid, Image, Text } from '@chakra-ui/core';
-import { dateMatch } from '../../utils/dates';
 
 export const HighlightRow = ({
   title,
@@ -8,10 +7,8 @@ export const HighlightRow = ({
   description,
   eventImage,
 }) => {
-  const showTimes = dates.filter(date => dateMatch('07/28/2015', date));
-
-  return showTimes.map(time => (
-    <Grid templateRows='50% 50%' my={2} key={time}>
+  return dates.map(date => (
+    <Grid templateRows='50% 50%' my={2} key={date}>
       <Flex justify='space-evenly'>
         <Image
           h='100px'
@@ -22,7 +19,7 @@ export const HighlightRow = ({
           <Text ml={2}>{title}</Text>
           <Text ml={2}>{location}</Text>
         </Flex>
-        <Text>{time.split(' ')[1]}</Text>
+        <Text>{date.split(' ')[1]}</Text>
       </Flex>
       <Flex direction='column' align='flex-end'>
         <Flex align='flex-end' mt={4}>
