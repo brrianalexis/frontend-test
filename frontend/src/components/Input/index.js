@@ -17,6 +17,8 @@ export const Input = ({
   label,
   hasRightIcon,
   inputIsValid,
+  value,
+  onChange,
   ...inputProps
 }) => {
   return (
@@ -25,6 +27,8 @@ export const Input = ({
       <ChakraInput
         {...inputProps}
         name={name}
+        value={value}
+        onChange={onChange}
         size={size}
         placeholder={placeholder}
         aria-label={label}
@@ -58,4 +62,6 @@ Input.propTypes = {
   label: PropTypes.string.isRequired,
   hasRightIcon: PropTypes.bool,
   inputIsValid: PropTypes.bool.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };

@@ -2,7 +2,7 @@ import { Flex, IconButton, Link } from '@chakra-ui/core';
 import { Link as RRDLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export const FixedButton = ({ icon, isLink, label }) => {
+export const FixedButton = ({ icon, isLink, label, onClick }) => {
   const Button = () => (
     <IconButton
       mb={2}
@@ -11,6 +11,8 @@ export const FixedButton = ({ icon, isLink, label }) => {
       aria-label={label}
       as={icon}
       isRound
+      onClick={onClick}
+      cursor='pointer'
     />
   );
 
@@ -37,4 +39,5 @@ FixedButton.propTypes = {
   icon: PropTypes.func.isRequired,
   isLink: PropTypes.bool,
   label: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 };
