@@ -1,14 +1,20 @@
+import { useEffect, useState } from 'react';
+import Axios from 'axios';
 import { Divider, Flex, Heading, Spinner, Text } from '@chakra-ui/core';
 import { HighlightRow } from '../HighlightRow';
 import { Emoji } from '../Emoji';
-import { isToday } from '../../utils/dates';
 
-export const Highlights = ({ events }) => {
-  const filteredEvents = events?.filter(event =>
-    event.dates.some(date => isToday('07/28/2015', date))
-  );
+export const Highlights = () => {
+  const [highlights, setHighlights] = useState();
 
-  const eventsToday = filteredEvents?.length !== 0;
+  useEffect(() => {
+    (async function getHighlights() {
+      const {
+        data: { events },
+      } = await Axios.get('http://localhost:8000/events/featured');
+      setHighlights(events);
+    })();
+  }, []);
 
   return (
     <Flex direction='column'>
@@ -16,16 +22,16 @@ export const Highlights = ({ events }) => {
         Today's Highlight
       </Heading>
       <Divider mt={2} />
-      {!events ? (
+      {!highlights ? (
         <Flex align='center' justify='center' mt={8}>
           <Spinner size='xl' color='teal.500' />
         </Flex>
-      ) : events && !eventsToday ? (
+      ) : highlights?.length === 0 ? (
         <Text mt={4}>
-          There are no events today <Emoji name='sad'>😥</Emoji>
+          There are no highlights today <Emoji name='sad'>😥</Emoji>
         </Text>
       ) : (
-        filteredEvents.map(
+        highlights.map(
           ({ id, title, dates, location, description, eventImage }) => (
             <HighlightRow
               key={id}
