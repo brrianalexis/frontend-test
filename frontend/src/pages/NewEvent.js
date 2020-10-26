@@ -7,7 +7,7 @@ import { FixedButton } from '../components/FixedBRButton';
 
 export const NewEvent = () => {
   const [newEvent, setNewEvent] = useState({
-    id: 3,
+    id: '',
     title: '',
     eventImage: '',
     description: '',
